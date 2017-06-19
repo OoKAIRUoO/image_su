@@ -1,0 +1,75 @@
+\documentclass[10pt,a4j]{jarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx]{color}
+\usepackage{url}
+\usepackage{here}
+\usepackage{amsmath}
+\usepackage{subfig}
+
+%\newcommand{\figref}[1]{図\ref{#1}}
+\newcommand{\subfigref}[2]{図\ref{#1}\subref{#2}}
+%\renewcommand{\eqref}[1]{式(\ref{#1})}
+
+
+
+\renewcommand{\topfraction}{1.0}
+\renewcommand{\bottomfraction}{1.0}
+\renewcommand{\dbltopfraction}{1.0}
+\renewcommand{\textfraction}{0.01}
+\renewcommand{\floatpagefraction}{1.0}
+\renewcommand{\dblfloatpagefraction}{1.0}
+\setcounter{topnumber}{5}
+\setcounter{bottomnumber}{5}
+\setcounter{totalnumber}{10}
+
+%----------表紙設定----------%
+\makeatletter
+\def\id#1{\def\@id{#1}}
+\def\department#1{\def\@department{#1}}
+\def\faculty#1{\def\@faculty{#1}}
+\def\adviser#1{\def\@adviser{#1}}
+\def\@maketitle{
+\begin{center}
+{\Large \@title \par} % 論文のタイトル部分
+\vspace{40mm}
+{\large \@date\par} % 提出年月日部分
+\vspace{15mm}
+{\large \@faculty \par} % 学部
+\vspace{15mm}
+{\large \@department \par} % 所属部分
+\vspace{50mm}
+{\large \@id \par} % 学籍番号
+\vspace{5mm}
+{\large \@author \par} % 氏名
+\vspace{5mm}
+{\large 指導教員:\ \@adviser \par} % 指導教員
+\vspace{10mm}
+{\large 豊橋技術科学大学 \par} %大学名
+\end{center}
+\par\vskip 1.5em
+}
+\makeatother
+
+\date{\today} % 日付
+\faculty{学部（工学）} % 学部
+\department{情報・知能工学課程} % 所属課程
+\id{153321} % 学籍番号
+\author{加藤\ 翼} % 氏名
+\adviser{三浦\ 純} % 指導教員
+
+\begin{document}
+%---表紙---%
+%	\maketitle
+%	\thispagestyle{empty}
+%	\setcounter{page}{0}
+%	\newpage
+	
+%---概要---%
+\input{1.tex}
+%\begin{thebibliography}{9}
+%	\fontsize{8.5pt}{0pt}\selectfont
+%	\bibitem{bunken1}{藤吉研究室，"画像局所特徴量と特定物体認識"，\url{http://www.vision.cs.chubu.ac.jp/cvtutorial/PDF/02SIFTandMore.pdf}}
+%\end{thebibliography}	
+
+
+\end{document}

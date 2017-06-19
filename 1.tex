@@ -1,0 +1,27 @@
+\newcommand{\figref}[1]{図\ref{#1}}
+\renewcommand{\eqref}[1]{式(\ref{#1})}
+\newcommand{\xia}{\xi_\alpha}
+\newcommand{\barxia}{\bar{\xi_a}}
+\subsection{最尤推定で楕円のパラメータを推定するときの目的関数が以下のようになることを示せ}
+\begin{equation}
+ J_{ML} = \sum_{\alpha=1}^N \frac{(u,\xi_\alpha)^2}{(u , V_0[\xi_\alpha]u)}
+\end{equation}
+ただし，\begin{math}V_0[\xi_a]はデータベクトル\xi_a\end{math}に関する正規化共分散行列を表す．\\ \\
+
+\begin{math}
+\xi 空間においてノイズモデルを正規分布と仮定すると，最尤推定は次のマハラノビス距離の二乗和の最小化となる．また，ここで
+\xi_\alpha の真値を\bar{\xi_\alpha}とおくと，以下の式で表すことができる．
+\end{math}
+
+\begin{equation}
+ J = \sum_{\alpha=1}^N (\xia - \barxia , V[\xia]^{-1}(\xia - \barxia) )
+\end{equation}
+これを拘束条件
+\begin{equation}
+ \label{eq:rule}
+  (\barxia,u) = 0 \ \ ,\  \alpha = 1, ... , N 
+\end{equation}
+のもとで最小となる
+\begin{math}
+\barxia ， u を考える．\eqref{eq:rule}は\barxia に関して線形であるため，ラグランジュ乗数を用いて削除することができる．
+\end{math}
